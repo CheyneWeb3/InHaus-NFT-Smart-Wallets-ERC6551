@@ -37,6 +37,12 @@
 				"internalType": "string",
 				"name": "logoUrl",
 				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contractOwner",
+				"type": "address"
 			}
 		],
 		"name": "ContractAdded",
@@ -59,6 +65,49 @@
 			}
 		],
 		"name": "ContractDeleted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "contractId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "contractAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "newNickname",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "newTokenType",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "newLogoUrl",
+				"type": "string"
+			}
+		],
+		"name": "ContractEdited",
 		"type": "event"
 	},
 	{
@@ -166,6 +215,39 @@
 			}
 		],
 		"name": "deleteContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_contractId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_newAbiUrl",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_newNickname",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_newTokenType",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_newLogoUrl",
+				"type": "string"
+			}
+		],
+		"name": "editContract",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
