@@ -147,7 +147,7 @@ flowchart TD
 config:
   layout: fixed
   theme: mc
-  look: handDrawn
+  look: classic
 ---
 flowchart TD
  subgraph SummaryTab["Summary Tab Layout"]
