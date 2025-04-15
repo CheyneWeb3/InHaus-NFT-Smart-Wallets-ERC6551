@@ -145,9 +145,9 @@ flowchart TD
 ```mermaid
 ---
 config:
+  layout: fixed
   theme: mc
   look: handDrawn
-  layout: elk
 ---
 flowchart TD
  subgraph SummaryTab["Summary Tab Layout"]
