@@ -77,19 +77,22 @@ The ERC‑6551 TBA application is a decentralized solution that transforms non-f
 
 
 ```mermaid
+---
+config:
+  layout: fixed
+  theme: mc
+  look: handDrawn
+---
 flowchart TD
-    %% Execution Flow Section
-    subgraph ExecutionFlow [Account Execution Flow]
-      A[EOA: Externally Owned Account] -->|Signs & calls executeCall| B[Top-Level TBA]
-      B --> C{Nested Execution?}
-      C -- No --> D[Direct Execution - Internal Function Called]
-      C -- Yes --> E[executeNestedCall]
-      E --> F[Nested TBA Level 1]
-      F --> G{More Nested Levels?}
-      G -- Yes --> H[Nested TBA Level 2 ...]
-      G -- No --> I[Final TBA]
-      I --> J[Execute Internal Function - e.g. transfer, withdraw]
-    end
+    A["EOA: Externally Owned Account"] -- Signs & calls executeCall --> B["Top-Level TBA"]
+    B --> C{"Nested Execution?"}
+    C -- No --> D["Direct Execution - Internal Function Called"]
+    C -- Yes --> E["executeNestedCall"]
+    E --> F["Nested TBA Level 1"]
+    F --> G{"More Nested Levels?"}
+    G -- Yes --> H["Nested TBA Level 2 ..."]
+    G -- No --> I["Final TBA"]
+    I --> J["Execute Internal Function - e.g. transfer, withdraw"]
 
  
 
