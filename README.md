@@ -110,38 +110,6 @@ flowchart TD
 ### Wallet Overview
 
 
-```mermaid
-flowchart TD
-
-
-    %% UI Layout Section
-    subgraph UIOverview [Wallet UI Layout]
-      K[Wallet Overview]
-      L[Summary Tab]
-      M[Balances Tab]
-      N[NFTs Tab]
-      O[Contracts Tab]
-      K --> L
-      K --> M
-      K --> N
-      K --> O
-      subgraph SummaryTab [Summary Tab Layout]
-        L1[Native ETH Card - Centered]
-        L2[ERC20 Tokens Grid - Up to 10 tokens, 5 columns]
-        L3[NFT Preview Grid - Up to 10 NFTs, 5 columns]
-        L --> L1
-        L --> L2
-        L --> L3
-      end
-      subgraph BalancesTab [Detailed Balances Tab]
-        M1[Balance Table]
-        M1 --> M2[Row: Native ETH - Icon, Name, Balance, Copy & Send]
-        M1 --> M3[Row: ERC20 Token - Icon, Name, Balance, Copy & Send]
-        M --> M1
-      end
-
-      end
-```
 
 - **Summary Tab:**  
   - Displays native ETH balance in its own centered card.
@@ -174,6 +142,39 @@ flowchart TD
 
 
 
+```mermaid
+---
+config:
+  theme: mc
+  look: handDrawn
+  layout: elk
+---
+flowchart TD
+ subgraph SummaryTab["Summary Tab Layout"]
+        L1["Native ETH Card - Centered"]
+        L2["ERC20 Tokens Grid - Up to 10 tokens, 5 columns"]
+        L3["NFT Preview Grid - Up to 10 NFTs, 5 columns"]
+        L["Summary Tab"]
+  end
+ subgraph BalancesTab["Detailed Balances Tab"]
+        M1["Balance Table"]
+        M2["Row: Native ETH - Icon, Name, Balance, Copy & Send"]
+        M3["Row: ERC20 Token - Icon, Name, Balance, Copy & Send"]
+        M["Balances Tab"]
+  end
+ subgraph UIOverview["Wallet UI Layout"]
+        K["Wallet Overview"]
+        N["NFTs Tab"]
+        O["Contracts Tab"]
+        SummaryTab
+        BalancesTab
+  end
+    K --> L & M & N & O
+    L --> L1 & L2 & L3
+    M1 --> M2 & M3
+    M --> M1
+
+```
 
 
 
